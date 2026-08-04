@@ -1,103 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" width="800" height="180">
   <defs>
     <style>
       @keyframes explode {
-        0%, 60% { opacity: 1; transform: scale(1); }
-        70% { opacity: 0.8; transform: scale(1.3); }
-        100% { opacity: 0; transform: scale(2); }
+        0%, 70% { opacity: 1; }
+        85% { opacity: 0.6; transform: scale(1.2); }
+        100% { opacity: 0; transform: scale(2.5); }
       }
       @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-5px); }
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
       }
       @keyframes pulse {
-        0%, 100% { fill: #ff0000; }
-        50% { fill: #ff4444; }
+        0%, 100% { fill: #ff4400; }
+        50% { fill: #ffaa00; }
       }
-      .bomb { animation: explode 3s infinite; }
-      .bomberman { animation: bounce 2s infinite; }
-      .spark { animation: pulse 0.5s infinite; }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .bomb { animation: explode 3s infinite; transform-origin: center; }
+      .bomberman { animation: bounce 2s infinite ease-in-out; }
+      .spark { animation: pulse 0.6s infinite; }
+      .fuse { animation: spin 1s infinite; transform-origin: center; }
     </style>
   </defs>
-  
+
   <!-- Background -->
-  <rect width="600" height="200" fill="#1a1a2e" rx="8"/>
-  
-  <!-- Grid pattern (Bomberman game floor) -->
-  <g fill="#16213e" opacity="0.3">
-    <rect x="0" y="0" width="30" height="30"/>
-    <rect x="60" y="0" width="30" height="30"/>
-    <rect x="120" y="0" width="30" height="30"/>
-    <rect x="180" y="0" width="30" height="30"/>
-    <rect x="240" y="0" width="30" height="30"/>
-    <rect x="300" y="0" width="30" height="30"/>
-    <rect x="360" y="0" width="30" height="30"/>
-    <rect x="420" y="0" width="30" height="30"/>
-    <rect x="480" y="0" width="30" height="30"/>
-    <rect x="540" y="0" width="30" height="30"/>
-    <rect x="30" y="30" width="30" height="30"/>
-    <rect x="90" y="30" width="30" height="30"/>
-    <rect x="150" y="30" width="30" height="30"/>
-    <rect x="210" y="30" width="30" height="30"/>
-    <rect x="270" y="30" width="30" height="30"/>
-    <rect x="330" y="30" width="30" height="30"/>
-    <rect x="390" y="30" width="30" height="30"/>
-    <rect x="450" y="30" width="30" height="30"/>
-    <rect x="510" y="30" width="30" height="30"/>
-  </g>
-  
+  <rect width="800" height="180" fill="#0d1117" rx="8"/>
+
   <!-- Bomberman Character -->
-  <g class="bomberman" transform="translate(250, 80)">
-    <!-- Body (white round body) -->
-    <ellipse cx="0" cy="20" rx="35" ry="40" fill="#ffffff" stroke="#000" stroke-width="2"/>
-    
-    <!-- Head -->
-    <ellipse cx="0" cy="-15" rx="30" ry="28" fill="#ffffff" stroke="#000" stroke-width="2"/>
-    
-    <!-- Red helmet -->
-    <path d="M -28 -25 Q -30 -55 0 -60 Q 30 -55 28 -25" fill="#e60012" stroke="#000" stroke-width="2"/>
-    
-    <!-- White pom-pom on top -->
-    <circle cx="0" cy="-62" r="8" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
-    
-    <!-- Eyes (blue, big) -->
-    <ellipse cx="-12" cy="-18" rx="8" ry="10" fill="#4a90d9" stroke="#000" stroke-width="1.5"/>
-    <ellipse cx="12" cy="-18" rx="8" ry="10" fill="#4a90d9" stroke="#000" stroke-width="1.5"/>
-    <circle cx="-12" cy="-18" r="3" fill="#000"/>
-    <circle cx="12" cy="-18" r="3" fill="#000"/>
-    
-    <!-- Mustache (black) -->
-    <path d="M -20 -5 Q -10 -8 0 -5 Q 10 -8 20 -5" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
-    
+  <g class="bomberman" transform="translate(180, 90)">
+    <!-- Left boot -->
+    <ellipse cx="-22" cy="52" rx="16" ry="8" fill="#8B4513" stroke="#000" stroke-width="2"/>
+    <!-- Right boot -->
+    <ellipse cx="22" cy="52" rx="16" ry="8" fill="#8B4513" stroke="#000" stroke-width="2"/>
+
+    <!-- Body (white round) -->
+    <ellipse cx="0" cy="18" rx="38" ry="35" fill="#ffffff" stroke="#000" stroke-width="2.5"/>
+
     <!-- Belt (blue) -->
-    <rect x="-25" y="10" width="50" height="6" fill="#2c5aa0" stroke="#000" stroke-width="1"/>
-    
-    <!-- Gloves (white) -->
-    <circle cx="-40" cy="25" r="10" fill="#ffffff" stroke="#000" stroke-width="2"/>
-    <circle cx="40" cy="25" r="10" fill="#ffffff" stroke="#000" stroke-width="2"/>
-    
-    <!-- Boots (brown) -->
-    <ellipse cx="-18" cy="58" rx="12" ry="6" fill="#8b4513" stroke="#000" stroke-width="1.5"/>
-    <ellipse cx="18" cy="58" rx="12" ry="6" fill="#8b4513" stroke="#000" stroke-width="1.5"/>
+    <rect x="-35" y="28" width="70" height="8" fill="#0066cc" stroke="#000" stroke-width="1.5"/>
+    <rect x="-8" y="26" width="16" height="12" fill="#ffcc00" stroke="#000" stroke-width="1.5"/>
+
+    <!-- Left glove -->
+    <circle cx="-42" cy="12" r="12" fill="#ffffff" stroke="#000" stroke-width="2.5"/>
+    <!-- Right glove -->
+    <circle cx="42" cy="12" r="12" fill="#ffffff" stroke="#000" stroke-width="2.5"/>
+
+    <!-- Head -->
+    <ellipse cx="0" cy="-22" rx="35" ry="32" fill="#ffffff" stroke="#000" stroke-width="2.5"/>
+
+    <!-- Helmet top (red dome) -->
+    <ellipse cx="0" cy="-48" rx="30" ry="18" fill="#e60012" stroke="#000" stroke-width="2"/>
+    <!-- Pom-pom (white) -->
+    <circle cx="0" cy="-64" r="8" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+
+    <!-- Red face mask -->
+    <ellipse cx="0" cy="-18" rx="28" ry="20" fill="#e60012" stroke="#000" stroke-width="1.5"/>
+
+    <!-- Left eye (white with pupil) -->
+    <ellipse cx="-12" cy="-22" rx="10" ry="12" fill="#ffffff" stroke="#000" stroke-width="2"/>
+    <circle cx="-12" cy="-20" r="5" fill="#000"/>
+    <circle cx="-10" cy="-22" r="2" fill="#ffffff"/>
+
+    <!-- Right eye (white with pupil) -->
+    <ellipse cx="12" cy="-22" rx="10" ry="12" fill="#ffffff" stroke="#000" stroke-width="2"/>
+    <circle cx="12" cy="-20" r="5" fill="#000"/>
+    <circle cx="14" cy="-22" r="2" fill="#ffffff"/>
+
+    <!-- Mustache (black) -->
+    <path d="M -18 -8 Q -8 -14 0 -8 Q 8 -14 18 -8" fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Mouth -->
+    <path d="M -6 -2 Q 0 4 6 -2" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
   </g>
-  
-  <!-- Bomb -->
-  <g class="bomb" transform="translate(380, 100)">
+
+  <!-- Bomb 1 -->
+  <g class="bomb" transform="translate(380, 85)">
+    <circle cx="0" cy="0" r="18" fill="#1a1a1a" stroke="#000" stroke-width="2"/>
+    <circle cx="-3" cy="-3" r="6" fill="#444" opacity="0.4"/>
+    <line x1="0" y1="-18" x2="6" y2="-28" stroke="#8B4513" stroke-width="3"/>
+    <circle cx="6" cy="-28" r="5" fill="#ff6600" class="spark"/>
+  </g>
+
+  <!-- Bomb 2 -->
+  <g class="bomb" transform="translate(500, 95)" style="animation-delay: 1.5s;">
     <circle cx="0" cy="0" r="15" fill="#1a1a1a" stroke="#000" stroke-width="2"/>
-    <circle cx="0" cy="0" r="10" fill="#333" opacity="0.5"/>
-    <line x1="0" y1="-15" x2="5" y2="-22" stroke="#8b4513" stroke-width="2"/>
-    <circle cx="5" cy="-22" r="3" fill="#ff6600" class="spark"/>
+    <circle cx="-2" cy="-2" r="5" fill="#444" opacity="0.4"/>
+    <line x1="0" y1="-15" x2="4" y2="-23" stroke="#8B4513" stroke-width="2.5"/>
+    <circle cx="4" cy="-23" r="4" fill="#ff6600" class="spark"/>
   </g>
-  
+
   <!-- Explosion effect -->
-  <g class="bomb" transform="translate(450, 100)">
-    <circle cx="0" cy="0" r="25" fill="none" stroke="#ff4400" stroke-width="3" opacity="0.8"/>
-    <circle cx="0" cy="0" r="15" fill="none" stroke="#ffaa00" stroke-width="2" opacity="0.6"/>
-    <circle cx="0" cy="0" r="8" fill="#ff6600" opacity="0.4"/>
+  <g class="bomb" transform="translate(620, 80)" style="animation-delay: 0.8s;">
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#ff4400" stroke-width="3" opacity="0.7"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#ffaa00" stroke-width="2" opacity="0.5"/>
+    <circle cx="0" cy="0" r="10" fill="#ff6600" opacity="0.3"/>
+    <!-- Explosion rays -->
+    <line x1="0" y1="-35" x2="0" y2="-45" stroke="#ff8800" stroke-width="2" opacity="0.6"/>
+    <line x1="25" y1="-25" x2="32" y2="-32" stroke="#ff8800" stroke-width="2" opacity="0.6"/>
+    <line x1="35" y1="0" x2="45" y2="0" stroke="#ff8800" stroke-width="2" opacity="0.6"/>
+    <line x1="25" y1="25" x2="32" y2="32" stroke="#ff8800" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="35" x2="0" y2="45" stroke="#ff8800" stroke-width="2" opacity="0.6"/>
+    <line x1="-25" y1="25" x2="-32" y2="32" stroke="#ff8800" stroke-width="2" opacity="0.6"/>
+    <line x1="-35" y1="0" x2="-45" y2="0" stroke="#ff8800" stroke-width="2" opacity="0.6"/>
+    <line x1="-25" y1="-25" x2="-32" y2="-32" stroke="#ff8800" stroke-width="2" opacity="0.6"/>
   </g>
-  
-  <!-- Title text -->
-  <text x="300" y="170" text-anchor="middle" font-family="monospace" font-size="18" fill="#ffffff" font-weight="bold">
+
+  <!-- Title -->
+  <text x="400" y="155" text-anchor="middle" font-family="monospace" font-size="20" fill="#ffffff" font-weight="bold">
     💣 Bomberman Explodindo Meus Commits!
   </text>
 </svg>
