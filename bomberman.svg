@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 160" width="800" height="160">
+  <!-- Background -->
+  <rect width="800" height="160" fill="#0d1117" rx="8"/>
+  
+  <!-- Grid pattern (like Bomberman floor tiles) -->
+  <g opacity="0.08">
+    <rect x="0" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="40" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="80" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="120" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="160" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="200" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="240" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="280" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="320" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="360" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="400" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="440" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="480" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="520" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="560" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="600" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="640" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="680" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+    <rect x="720" y="0" width="40" height="40" fill="#4a5568" rx="4"/>
+    <rect x="760" y="0" width="40" height="40" fill="#2d3748" rx="4"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" fill="#ff6b35" font-family="monospace" font-size="16" font-weight="bold">
+    <tspan>💣 Bomberman Explodindo Meus Commits</tspan>
+  </text>
+  
+  <!-- Bomberman character -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" 
+      values="50,80;150,80;250,80;350,80;450,80;550,80;650,80;750,80;750,80;50,80" 
+      dur="12s" repeatCount="indefinite"/>
+    
+    <!-- Bomberman body (white round body) -->
+    <ellipse cx="0" cy="0" rx="18" ry="22" fill="#ffffff"/>
+    
+    <!-- Helmet (red) -->
+    <path d="M -18 -5 Q -18 -25 0 -25 Q 18 -25 18 -5 Z" fill="#ff3333"/>
+    <path d="M -20 -5 Q -20 -28 0 -30 Q 20 -28 20 -5 Z" fill="#cc0000"/>
+    
+    <!-- Helmet top bump -->
+    <ellipse cx="0" cy="-28" rx="6" ry="4" fill="#ff3333"/>
+    
+    <!-- Eyes -->
+    <ellipse cx="-7" cy="-5" rx="5" ry="6" fill="#000000"/>
+    <ellipse cx="7" cy="-5" rx="5" ry="6" fill="#000000"/>
+    <circle cx="-6" cy="-7" r="2" fill="#ffffff"/>
+    <circle cx="8" cy="-7" r="2" fill="#ffffff"/>
+    
+    <!-- Mustache -->
+    <path d="M -10 2 Q -5 6 0 2 Q 5 6 10 2" fill="#000000" stroke="#000000" stroke-width="2"/>
+    
+    <!-- Arms -->
+    <ellipse cx="-22" cy="5" rx="6" ry="8" fill="#ffffff"/>
+    <ellipse cx="22" cy="5" rx="6" ry="8" fill="#ffffff"/>
+    
+    <!-- Legs -->
+    <rect x="-12" y="18" width="8" height="10" rx="3" fill="#ffffff"/>
+    <rect x="4" y="18" width="8" height="10" rx="3" fill="#ffffff"/>
+    
+    <!-- Boots -->
+    <ellipse cx="-8" cy="30" rx="8" ry="5" fill="#333333"/>
+    <ellipse cx="8" cy="30" rx="8" ry="5" fill="#333333"/>
+    
+    <!-- Bomb being placed (appears every few seconds) -->
+    <g>
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.6;0.65;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+      <circle cx="25" cy="25" r="6" fill="#000000"/>
+      <circle cx="25" cy="25" r="3" fill="#333333"/>
+      <path d="M 23 19 L 27 19 L 25 16 Z" fill="#ff3333"/>
+      <!-- Fuse spark -->
+      <circle cx="26" cy="15" r="2" fill="#ff6600">
+        <animate attributeName="opacity" values="1;0;1;0;1" dur="0.3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Explosion effect (appears when bomb explodes) -->
+    <g>
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6;0.62;0.7;0.72;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+      <circle cx="25" cy="25" r="0" fill="#ff6600">
+        <animate attributeName="r" values="0;0;15;20;0" keyTimes="0;0.6;0.65;0.7;0.72" dur="12s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+      <circle cx="25" cy="25" r="0" fill="#ffff00">
+        <animate attributeName="r" values="0;0;10;15;0" keyTimes="0;0.6;0.65;0.7;0.72" dur="12s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+      <circle cx="25" cy="25" r="0" fill="#ffffff">
+        <animate attributeName="r" values="0;0;5;8;0" keyTimes="0;0.6;0.65;0.7;0.72" dur="12s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Commit dots (being exploded) -->
+  <!-- JavaScript commit (yellow) -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.6;0.62;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+    <circle cx="150" cy="80" r="10" fill="#f1e05a"/>
+    <text x="150" y="84" text-anchor="middle" fill="#000" font-family="monospace" font-size="8" font-weight="bold">JS</text>
+  </g>
+  
+  <!-- Python commit (blue) -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.6;0.62;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+    <circle cx="250" cy="80" r="10" fill="#3572A5"/>
+    <text x="250" y="84" text-anchor="middle" fill="#fff" font-family="monospace" font-size="8" font-weight="bold">PY</text>
+  </g>
+  
+  <!-- CSS commit (purple) -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.6;0.62;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+    <circle cx="350" cy="80" r="10" fill="#563d7c"/>
+    <text x="350" y="84" text-anchor="middle" fill="#fff" font-family="monospace" font-size="8" font-weight="bold">CSS</text>
+  </g>
+  
+  <!-- Markdown commit (white) -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.6;0.62;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+    <circle cx="450" cy="80" r="10" fill="#fff"/>
+    <text x="450" y="84" text-anchor="middle" fill="#000" font-family="monospace" font-size="8" font-weight="bold">MD</text>
+  </g>
+  
+  <!-- HTML commit (orange) -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.6;0.62;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+    <circle cx="550" cy="80" r="10" fill="#e34c26"/>
+    <text x="550" y="84" text-anchor="middle" fill="#fff" font-family="monospace" font-size="8" font-weight="bold">HTML</text>
+  </g>
+  
+  <!-- Git commit (red) -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.6;0.62;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+    <circle cx="650" cy="80" r="10" fill="#f05032"/>
+    <text x="650" y="84" text-anchor="middle" fill="#fff" font-family="monospace" font-size="8" font-weight="bold">GIT</text>
+  </g>
+  
+  <!-- Score display -->
+  <text x="400" y="135" text-anchor="middle" fill="#ff6b35" font-family="monospace" font-size="12" opacity="0.6">
+    <tspan>BOOM! 💥 6 commits explodidos</tspan>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </text>
+  
+  <!-- Game UI elements -->
+  <text x="50" y="145" fill="#4a5568" font-family="monospace" font-size="10">
+    <tspan>SCORE: 600</tspan>
+  </text>
+  <text x="600" y="145" fill="#4a5568" font-family="monospace" font-size="10">
+    <tspan>PLAYER: 1</tspan>
+  </text>
+</svg>

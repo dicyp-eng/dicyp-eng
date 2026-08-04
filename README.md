@@ -6,9 +6,9 @@
 
 ---
 
-## 🎮 Pac-Man Comendo Meus Commits
+## 💣 Bomberman Explodindo Meus Commits
 
-![Pac-Man](pacman.svg)
+![Bomberman](bomberman.svg)
 
 ---
 
