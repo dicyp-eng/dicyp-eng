@@ -49,7 +49,7 @@
   <a href="https://www.youtube.com/@EuChowYT" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/youtube/default.svg" width="48" height="28" alt="youtube logo"  />
   </a>
-  <a href="instagram.com/romulobarbo.sa" target="_blank">
+  <a href="https://instagram.com/romulobarbo.sa" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="48" height="28" alt="instagram logo"  />
   </a>
 </div>
